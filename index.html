@@ -166,6 +166,23 @@
   .tl .ev b{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.05rem}
   .tl .ev span{display:block;color:var(--muted);font-size:.96rem;margin-top:2px}
 
+  /* ---------- WRITING / POSTS ---------- */
+  .posts{border-top:1px solid var(--line)}
+  .post{
+    display:grid;grid-template-columns:130px 1fr;gap:30px;
+    padding:28px 24px 28px 0;border-bottom:1px solid var(--line);
+    text-decoration:none;color:inherit;
+    transition:background .2s ease,color .2s ease,padding-left .2s ease;
+  }
+  .post:hover{background:var(--black);color:var(--white);padding-left:24px;opacity:1}
+  .band.invert .post:hover{background:var(--white);color:var(--black)}
+  .post .date{font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .post:hover .date,.post:hover .src{color:var(--muted)}
+  .post h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.15rem,2.4vw,1.55rem);letter-spacing:-.01em;line-height:1.16;margin:0 0 8px}
+  .post p{color:var(--muted);margin:0;font-size:.98rem;max-width:62ch}
+  .post .src{display:block;margin-top:12px;font-family:'Archivo',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  @media(max-width:680px){.post{grid-template-columns:1fr;gap:8px}}
+
   /* ---------- PHOTO ---------- */
   .photo{
     width:230px;height:230px;object-fit:cover;filter:grayscale(1) contrast(1.05);
@@ -219,6 +236,7 @@
       <button data-go="home" class="on">Home</button>
       <button data-go="mission">Mission</button>
       <button data-go="biography">Biography</button>
+      <button data-go="writing">Writing</button>
       <button data-go="contact">Contact</button>
     </div>
   </div>
@@ -285,7 +303,7 @@
           <div class="key">TBF<b>The BIM Factory</b>Ho Chi Minh City</div>
           <div>
             <p>The BIM Factory is located in Ho Chi Minh City and provides BIM consultancy and VDC technology services globally.</p>
-            <p>I established the company in 2014, intending to become a leading BIM consultancy in Asia, but mainly to learn more about BIM and VDC. By 2011 I had recognized BIM as a crucial aspect of virtual design and construction, and saw that hands-on experience was necessary to deepen my understanding. That conviction led to the company's creation. I soon realized BIM would play a critical role in automating the process, and it has since become a central part of my overarching vision.</p>
+            <p>I established the company in 2014. It had been operating since late 2013 and was officially registered that January. My intent was to become a leading BIM consultancy in Asia, but mainly to learn more about BIM and VDC. By 2011 I had recognized BIM as a crucial aspect of virtual design and construction, and saw that hands-on experience was necessary to deepen my understanding. That conviction led to the company's creation. I soon realized BIM would play a critical role in automating the process, and it has since become a central part of my overarching vision.</p>
             <p>Learn more: <a href="https://www.the-bimfactory.com/" target="_blank" rel="noopener">the-bimfactory.com</a></p>
           </div>
         </div>
@@ -304,7 +322,7 @@
         <div class="venture">
           <div class="key">AROBOTIX<b>AROBOTIX Corp.</b>Ho Chi Minh City</div>
           <div>
-            <p>My latest creation, AROBOTIX, was founded to develop innovative technology and processes for the future of construction.</p>
+            <p>My latest venture, AROBOTIX, began as research and development in 2022 and was officially registered and launched in 2025, to develop innovative technology and processes for the future of construction.</p>
             <p>AROBOTIX is building the execution layer for construction, the system that turns digital building plans into clear, real-world actions for people and machines. Our technology breaks complex designs into simple, step-by-step tasks, coordinates robots and human crews on site, and verifies that work is done correctly as it happens.</p>
             <p>Instead of managing construction through guesswork, meetings, and after-the-fact reports, AROBOTIX creates measurable, traceable execution in real time. We are not just building robots; we are building the intelligence that finally allows automation, labor, and digital plans to work together at scale.</p>
             <p>Currently, AROBOTIX is collaborating with several companies in Vietnam, Germany, and Japan during the R&amp;D stage to visualize the systems and drive further development.</p>
@@ -344,8 +362,8 @@
       <p>He started far from Vietnam. At age 9, Han left the country for Los Angeles with his sister, and grew up in the LA area. He studied architectural design at Woodbury University in Burbank starting in 1995 and earned a professional degree in architecture in 2000. But drawing buildings was never the point for him. How they got built was.</p>
       <p>That question took him to MIT. He moved to Massachusetts in 2003 and graduated in 2005 with a Master's Degree in Architectural Studies, focused on advanced automated construction technology, work that earned him the Research Scholarship Award from the Design and Computation Group. His thesis advisor told him the technology to automate construction was still 25 to 30 years away. Han treated that as a roadmap, not a discouragement.</p>
       <p>Before MIT, he had worked as a design associate at a Los Angeles architecture and urban planning firm, on large-scale commercial and entertainment projects across Los Angeles, Las Vegas, and Arizona. After MIT, in 2005, he joined Bovis Lend Lease as an assistant project manager on major hospitality and residential projects in New York, and taught as a part-time adjunct professor at the New York Institute of Technology from 2005 to 2006. Design, then construction, then management: he was deliberately collecting the pieces of a process that the industry keeps apart.</p>
-      <p>In late 2008 he relocated to Vietnam and worked as a private project developer. What he saw there, a real need for better design and construction quality, became the reason to stop consulting on the problem and start building the answer. In 2014 he founded The BIM Factory to create the region's most forward-thinking, highly skilled BIM engineering consultancy, and the place to master the digital model end of the problem.</p>
-      <p>From there the work moved closer to the physical build. In 2017 he founded The Fab Factory to attack fabrication and modular construction, which he rebranded and relaunched as The Fab Collective in 2025. In 2022 he founded AROBOTIX to take the digital plan all the way onto the job site through automation and robotics. Since 2017 he has served on the Ministry of Construction's BIM Steering Committee for Vietnam's BIM Roadmap, and he contributes to the DfMA Working Group at the BIMForum, helping define the next process for design and manufacturing in the building industry.</p>
+      <p>In late 2008 he relocated to Vietnam and worked as a private project developer. What he saw there, a real need for better design and construction quality, became the reason to stop consulting on the problem and start building the answer. In 2014 he founded The BIM Factory, which had been operating since late 2013 and was officially registered that January, to create the region's most forward-thinking, highly skilled BIM engineering consultancy and master the digital model end of the problem.</p>
+      <p>From there the work moved closer to the physical build. In 2017 he founded The Fab Factory to attack fabrication and modular construction, which he rebranded and relaunched as The Fab Collective in 2025. In 2022 he began R&amp;D on AROBOTIX, which he officially registered and launched in 2025, taking the digital plan all the way onto the job site through automation and robotics. Since 2017 he has served on the Ministry of Construction's BIM Steering Committee for Vietnam's BIM Roadmap, and he contributes to the DfMA Working Group at the BIMForum, helping define the next process for design and manufacturing in the building industry.</p>
       <p>The mission underneath all of it has not changed since MIT: develop the technological processes for design, engineering, manufacturing, and construction that make decent housing efficient, affordable, and available to far more people than it reaches today. The companies are not a collection. They are the experiment.</p>
     </div>
   </section>
@@ -363,15 +381,16 @@
         <div class="row"><div class="yr">2009</div><div class="ev"><b>Founded DH Studio, San Francisco</b><span>Design consulting.</span></div></div>
         <div class="row"><div class="yr">2010</div><div class="ev"><b>Founded DHC, Ho Chi Minh City</b><span>Architecture design.</span></div></div>
         <div class="row"><div class="yr">2013</div><div class="ev"><b>Co-founded Synectics</b><span>The first BIM consultancy company in Vietnam.</span></div></div>
-        <div class="row"><div class="yr">2014</div><div class="ev"><b>Founded The BIM Factory, Ho Chi Minh City</b><span>BIM consultancy company.</span></div></div>
+        <div class="row"><div class="yr">2014</div><div class="ev"><b>Founded The BIM Factory, Ho Chi Minh City</b><span>BIM consultancy company. Operating since late 2013, officially registered January 11, 2014.</span></div></div>
         <div class="row"><div class="yr">2016</div><div class="ev"><b>Co-founded the Institute of Virtual Design and Construction</b><span>BIM education and content.</span></div></div>
         <div class="row"><div class="yr">2017</div><div class="ev"><b>Founded TBF Academy, Vietnam</b><span>Training for BIM modelers and coordinators.</span></div></div>
         <div class="row"><div class="yr">2017</div><div class="ev"><b>Founded The Fab Factory</b><span>Prefab and modular construction. Rebranded and relaunched as The Fab Collective in 2025.</span></div></div>
         <div class="row"><div class="yr">2017</div><div class="ev"><b>Member, BIM Steering Committee, Vietnam</b><span>Ministry of Construction's BIM Roadmap.</span></div></div>
         <div class="row"><div class="yr">2018</div><div class="ev"><b>Co-founded MITFive, Vietnam</b><span>Startups and entrepreneurship training.</span></div></div>
         <div class="row"><div class="yr">2022</div><div class="ev"><b>Co-founded Fablab Thao Dien</b><span>Makerspace and workshop facility.</span></div></div>
-        <div class="row"><div class="yr">2022</div><div class="ev"><b>Founded AROBOTIX</b><span>Construction automation and robotics.</span></div></div>
+        <div class="row"><div class="yr">2022</div><div class="ev"><b>AROBOTIX R&amp;D begins</b><span>Construction automation and robotics. Officially registered and launched in 2025.</span></div></div>
         <div class="row"><div class="yr">2023</div><div class="ev"><b>Founded The Dream Factory, Vietnam</b><span>Hardware accelerator and innovation lab.</span></div></div>
+        <div class="row"><div class="yr">2025</div><div class="ev"><b>Launched AROBOTIX</b><span>Officially registered and launched after R&amp;D begun in 2022.</span></div></div>
         <div class="row"><div class="yr">2025</div><div class="ev"><b>Co-founded NUEN MOTO</b><span>Electric motorcycle company.</span></div></div>
         <div class="row"><div class="yr">2025</div><div class="ev"><b>Relaunched The Fab Collective</b><span>Prefab and modular construction, rebranded from The Fab Factory.</span></div></div>
       </div>
@@ -399,6 +418,127 @@
           <div class="key">AROBOTIX<b>AROBOTIX Corp.</b>Founder, CEO</div>
           <div><p>Construction automation and robotics. A startup developing novel technologies that advance construction work through robotics and automated systems for the global construction industry.</p></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============ WRITING / BLOG ============ -->
+<!-- To add a post: copy one <a class="post"> block, change the href to the
+     Medium URL, and update the date, title, and one-line description. -->
+<section class="page" id="writing">
+
+  <section class="band" style="padding-top:140px">
+    <div class="wrap">
+      <span class="eyebrow">Writing</span>
+      <h2 style="max-width:22ch">Essays on building, automation, and the gap between them.</h2>
+      <p class="lead" style="max-width:40ch">Long-form pieces published on Medium. Each one links out to the full article.</p>
+
+      <div class="posts" style="margin-top:36px">
+        <!-- POSTS:START (auto-generated by build-blog.js, manual edits between the markers are overwritten on sync) -->
+
+        <a class="post" href="https://hanmhoang.medium.com/tokenizing-bim-services-the-future-of-outsourcing-and-financial-transparency-4cc296084e3e" target="_blank" rel="noopener">
+          <div class="date">Feb 28, 2025</div>
+          <div>
+            <h3>Tokenizing BIM Services: The Future of Outsourcing and Financial Transparency?</h3>
+            <p>What tokenized BIM service hours could mean for outsourcing models and financial transparency across the AEC industry.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/the-convergence-of-cryptocurrency-blockchain-and-bim-a-data-driven-future-for-the-building-52ef32b0e599" target="_blank" rel="noopener">
+          <div class="date">Feb 21, 2025</div>
+          <div>
+            <h3>The Convergence of Cryptocurrency, Blockchain, and BIM</h3>
+            <p>How blockchain and crypto could reshape data and value flow in the building industry: a data-driven future for AEC.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/robotics-and-automation-in-construction-8b010e344f1b" target="_blank" rel="noopener">
+          <div class="date">Feb 9, 2023</div>
+          <div>
+            <h3>Robotics and Automation in Construction</h3>
+            <p>Weren't robots supposed to build our buildings by now? A look at what actually happened to progress on the job site.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/onward-to-new-frontiers-c79a8bb18109" target="_blank" rel="noopener">
+          <div class="date">Jan 8, 2020</div>
+          <div>
+            <h3>Onward to New Frontiers</h3>
+            <p>Looking back on what the team accomplished, and what comes next.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/committed-builders-9c222ee84e04" target="_blank" rel="noopener">
+          <div class="date">Jul 27, 2019</div>
+          <div>
+            <h3>Committed Builders</h3>
+            <p>What the industry needs to think about when it comes to building in the next decade.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/towards-a-new-building-process-17e2e79f4dac" target="_blank" rel="noopener">
+          <div class="date">Aug 27, 2018</div>
+          <div>
+            <h3>Towards a New Building Process</h3>
+            <p>Part 4 of The Freestanding Right To A Habitable Shelter.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/the-future-of-the-building-industry-has-arrived-6e6209413f4" target="_blank" rel="noopener">
+          <div class="date">Nov 17, 2016</div>
+          <div>
+            <h3>The Future of the Building Industry Has Arrived</h3>
+            <p>Integration, information, collaboration, fabrication, mass-production, and automation, all at once.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/when-bim-meets-design-dbca8b8c10f6" target="_blank" rel="noopener">
+          <div class="date">Aug 30, 2016</div>
+          <div>
+            <h3>When BIM Meets Design</h3>
+            <p>Can ARCHICAD or Revit justify the effectiveness of designing directly in BIM?</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/the-freestanding-right-to-a-habitable-shelter-b1e88b5a140d" target="_blank" rel="noopener">
+          <div class="date">Aug 26, 2016</div>
+          <div>
+            <h3>The Freestanding Right To A Habitable Shelter</h3>
+            <p>Part 3: The Perfect Storm.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/what-i-learned-from-learning-revit-8168a83ca3f9" target="_blank" rel="noopener">
+          <div class="date">Jul 26, 2016</div>
+          <div>
+            <h3>What I Learned From Learning Revit</h3>
+            <p>A personal account of learning Revit, and the lessons that came with it.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+        <!-- POSTS:END -->
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band invert">
+    <div class="wrap">
+      <h4>More</h4>
+      <p class="lead" style="max-width:30ch;margin-bottom:24px">Everything is published on Medium, where new pieces appear first.</p>
+      <div class="home-links" style="margin-top:0">
+        <a href="https://hanmhoang.medium.com/" target="_blank" rel="noopener">All articles on Medium</a>
       </div>
     </div>
   </section>
