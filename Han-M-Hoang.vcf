@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Hoang;Han;M.;;
+FN:HAN M. HOANG
+EMAIL;TYPE=INTERNET:han.hoang@the-bim-factory.com
+EMAIL;TYPE=INTERNET:h.hoang@the-fab-collective.com
+EMAIL;TYPE=INTERNET:han@arobotix.com
+EMAIL;TYPE=INTERNET:han@nuenmoto.com
+TEL;TYPE=CELL:+84908750621
+TEL;TYPE=CELL:+33744900099
+item1.TEL:+84908750621
+item1.X-ABLabel:WhatsApp
+URL:https://www.the-bim-factory.com
+URL:https://www.the-fab-collective.com
+URL:https://www.arobotix.com
+URL:https://www.nuenmoto.com
+END:VCARD
