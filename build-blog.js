@@ -36,7 +36,7 @@ const FEEDS = [
 //
 // Suggested on-thesis picks (uncomment to use):
 // const PINNED = ["8b010e344f1b", "17e2e79f4dac", "b1e88b5a140d"];
-const PINNED = [];
+const PINNED = ["8b010e344f1b", "17e2e79f4dac", "b1e88b5a140d"];
 
 const MAX_POSTS = 20;          // hard cap on cards rendered
 const DEK_MAX = 160;           // max characters in the one-line summary

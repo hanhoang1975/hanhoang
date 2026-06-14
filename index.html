@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Han M. Hoang</title>
 <!-- Favicon (embedded, works with no extra upload) -->
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABJklEQVR4nO2UMU4DMRBFXwiQSAFFNECTU4AEV6HnAOkiCs5GS0ObC3CJkE12KTyWZkfr8ZoCpfCXRqPd729/j8eGioqKihNCJ9FI3sj/ueR3+b9X+U5ib7hXo92Yubu46Llj6Mx8X5rviQQqj50rT6gFYnTO2Jw2adAzcKBf1rbAgNUeUgO9I1gCt4Rz3AGLAgM3RrtMDdSlsSX+ITSNNjuXcRPCrlbCfQsfuR39XV8As6G1vQrM6DdertE0otGs1jNQuuiftEMGWkJzfgJfwBQ4Ak/Ao/DTxHyR+wC2SvsAPKu5B2EforXh3+h3dgPcSzSGezHaNYmHyLuGC0KFriSX3ILrsVrPQEvo5Bgl78BorWfgX5C7BRp2F/osS57pioqKitPCLyAYU2WOhcXBAAAAAElFTkSuQmCC">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABsUlEQVR4nO2Xsa6qQBCG/x0WiZIQY2Ksbax8AWs7a3ufzfAO9HZa2NmYWNtQWSxa7DKn8OwGuF7g3oJTHP5mN5Nh/m93B7IIFDQajRgdKMsyYefUtXnVi7o2r0KInzAvippTeoAe4LcBKKXweDyglEIcxy4+mUxwv9+hlIJSCkmSAACSJHGx6/WKIAggxPtDF8dxqd4nyTo6z/NA9GaUUro5AGdiR7ciIhARmBme5zXuQC2A1hp5ngMAns9nYzFmLuVprf8PwK4qiiLM53MAwHg8/mO1Vfm+j8ViAa01mBlRFJXqtQawW7der3E+n118MBjAGPNxa40xmM1mOB6PJaBivdYAVkSEIAjqUkoSQvxT/l8BmBlCCKRpisvl8k6UEqvVqtSIVfPX64XT6eT6ZrlcYjqdunqtAYwxkFLicDhgt9sBAMIwxO12c+daFREhTVNsNhsX2+/32G63rt7H5z5Gv+X7vnutwjBsbEIhBIbDoXt9bQ/UqbYHmNltpx2blOc58jwHM4O5+arR+lNcLWjnbUzq1N+IeoAeoAeg4o9i18qyTJCd/IQ5UDiCLiGKXl95lbgPhWKqIwAAAABJRU5ErkJggg==">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <!-- Social share preview. og-image.png must be hosted at the site root.
      Update the absolute URLs if the domain ever changes. -->
@@ -87,8 +87,9 @@
   }
   nav.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
   nav.bar, nav.bar *{color:var(--black)}
-  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
   .brand img{height:26px;width:auto;display:block}
+  .brandname{font-family:'Archivo',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.06em;white-space:nowrap}
   .navlinks{display:flex;gap:6px;flex-wrap:wrap}
   .navlinks button{
     font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;
@@ -117,7 +118,12 @@
     font-size:clamp(3.2rem,14vw,10.5rem);line-height:.86;letter-spacing:-.035em;
     margin:0;
   }
-  .tag{font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--muted);max-width:58ch;margin-top:32px}
+  .lead-line{
+    font-family:'Archivo',sans-serif;font-weight:800;color:inherit;
+    font-size:clamp(1.55rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.015em;
+    max-width:24ch;margin-top:36px;
+  }
+  .subline{font-size:clamp(1rem,1.7vw,1.18rem);color:var(--muted);max-width:60ch;margin-top:22px}
 
   /* boxy MIT-style quote */
   .quotebox{
@@ -249,7 +255,7 @@
 <!-- ============ NAV ============ -->
 <nav class="bar">
   <div class="wrap">
-    <a class="brand" href="#" data-go="home" aria-label="Han M. Hoang, home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAABgCAYAAACntRj/AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAC8UlEQVR4nO3dP04bQRiG8XdtSIVA4gaRUqVNT58zIKVOQZ8r5FS5RpooUsQFiGiSgNkUMyMsRzYbi/m+Ne/zk1YGyfbsn8frpWBWksbA5a4+Xkk6krRQX+39X2+MH7Vc1PGHCevannMRvI5tn7zb2Ge9LFSO/dXG+FFL6GDry3ndAVNi2NcgaSnpcx1zFbRtbZzruh7LCevannMdvK6RwbdjfR60bf8svT/N29zXFehtVDmbfKq/R2/vz6DXHJpRpYFwWcFPOeM9l1HSTeB46/bZzsh9kyllO7OCj3acvQKYB5fgAUkEDzMEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysuwadM3In5cQn+LHsFMA+ZwT/Ux97TZv+R9LH+vOo81iFrx+Fh57PmP8ZOR0njDpK+K26O+F/1Z5dvtP/RGviiuEu/QX1vhLFVVvDS4x1AIqXs5ANhcdmXGXzE2X0dse9mcTwygyfAebE4HlzTwgrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBw0rmv/hFTtXAB/tpo2L/rzXlmGQGT4TzkjZ1RqTM4L8pZmKkQdIb8QHbZlTZRz/0OH9Pb0uVYxIuK/hR0ltJd0Hj3Uo6CRrr0KxUOngv6WvQmMeSfivhGyXzDH8q6UZlo3teO76SwVf1MzhROfMu1O/vq3asTzu9/5Oy/2hdqX/wzCc5TTseo/oHnza3JNe1sELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsOISfNYc8fuMy3z2HbkEn3XHibOg12Cilx78QuU+Uh/q71Fnz7ZfL+vjlDtetOe017z0Y5PiLycQLUEnc+2PAAAAAElFTkSuQmCC" alt="HH"></a>
+    <a class="brand" href="#" data-go="home" aria-label="Han M. Hoang, home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAABgCAYAAACntRj/AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAC8UlEQVR4nO3dP04bQRiG8XdtSIVA4gaRUqVNT58zIKVOQZ8r5FS5RpooUsQFiGiSgNkUMyMsRzYbi/m+Ne/zk1YGyfbsn8frpWBWksbA5a4+Xkk6krRQX+39X2+MH7Vc1PGHCevannMRvI5tn7zb2Ge9LFSO/dXG+FFL6GDry3ndAVNi2NcgaSnpcx1zFbRtbZzruh7LCevannMdvK6RwbdjfR60bf8svT/N29zXFehtVDmbfKq/R2/vz6DXHJpRpYFwWcFPOeM9l1HSTeB46/bZzsh9kyllO7OCj3acvQKYB5fgAUkEDzMEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysuwadM3In5cQn+LHsFMA+ZwT/Ux97TZv+R9LH+vOo81iFrx+Fh57PmP8ZOR0njDpK+K26O+F/1Z5dvtP/RGviiuEu/QX1vhLFVVvDS4x1AIqXs5ANhcdmXGXzE2X0dse9mcTwygyfAebE4HlzTwgrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBw0rmv/hFTtXAB/tpo2L/rzXlmGQGT4TzkjZ1RqTM4L8pZmKkQdIb8QHbZlTZRz/0OH9Pb0uVYxIuK/hR0ltJd0Hj3Uo6CRrr0KxUOngv6WvQmMeSfivhGyXzDH8q6UZlo3teO76SwVf1MzhROfMu1O/vq3asTzu9/5Oy/2hdqX/wzCc5TTseo/oHnza3JNe1sELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsOISfNYc8fuMy3z2HbkEn3XHibOg12Cilx78QuU+Uh/q71Fnz7ZfL+vjlDtetOe017z0Y5PiLycQLUEnc+2PAAAAAElFTkSuQmCC" alt="HH"><span class="brandname">HAN M. HOANG</span></a>
     <div class="navlinks" id="nav">
       <button data-go="home" class="on">Home</button>
       <button data-go="mission">Mission</button>
@@ -265,9 +271,10 @@
 
   <section class="band hero">
     <div class="wrap">
-      <span class="eyebrow">Architect, Engineer, Lifelong Student</span>
+      <span class="eyebrow">Designer, Engineer, Lifelong Student</span>
       <h1 class="name">Han M.<br>Hoang</h1>
-      <p class="tag">Educated as an architect, but prefer to be an engineer, and will always be a lifelong student. My interests: design, BIM, fabrication, construction, robotics, automation, and everything in between.</p>
+      <p class="lead-line">Twenty plus years on one problem: making the building you design and the building that actually gets built the same building.</p>
+      <p class="subline">Architecture and Engineering by training, perpetual student by habit. I work across BIM, fabrication, construction automation, and electric mobility.</p>
 
       <!-- boxy MIT-style quote -->
       <div class="quotebox">
@@ -455,6 +462,32 @@
 
       <div class="posts" style="margin-top:36px">
         <!-- POSTS:START (auto-generated by build-blog.js, manual edits between the markers are overwritten on sync) -->
+        <a class="post" href="https://hanmhoang.medium.com/robotics-and-automation-in-construction-8b010e344f1b" target="_blank" rel="noopener">
+          <div class="date">Feb 9, 2023</div>
+          <div>
+            <h3>Robotics and Automation in Construction</h3>
+            <p>Weren't robots supposed to build our buildings by now? A look at what actually happened to progress on the job site.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/towards-a-new-building-process-17e2e79f4dac" target="_blank" rel="noopener">
+          <div class="date">Aug 27, 2018</div>
+          <div>
+            <h3>Towards a New Building Process</h3>
+            <p>Part 4 of The Freestanding Right To A Habitable Shelter.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
+
+        <a class="post" href="https://hanmhoang.medium.com/the-freestanding-right-to-a-habitable-shelter-b1e88b5a140d" target="_blank" rel="noopener">
+          <div class="date">Aug 26, 2016</div>
+          <div>
+            <h3>The Freestanding Right To A Habitable Shelter</h3>
+            <p>Part 3: The Perfect Storm.</p>
+            <span class="src">Read on Medium</span>
+          </div>
+        </a>
 
         <a class="post" href="https://hanmhoang.medium.com/tokenizing-bim-services-the-future-of-outsourcing-and-financial-transparency-4cc296084e3e" target="_blank" rel="noopener">
           <div class="date">Feb 28, 2025</div>
@@ -470,15 +503,6 @@
           <div>
             <h3>The Convergence of Cryptocurrency, Blockchain, and BIM</h3>
             <p>How blockchain and crypto could reshape data and value flow in the building industry: a data-driven future for AEC.</p>
-            <span class="src">Read on Medium</span>
-          </div>
-        </a>
-
-        <a class="post" href="https://hanmhoang.medium.com/robotics-and-automation-in-construction-8b010e344f1b" target="_blank" rel="noopener">
-          <div class="date">Feb 9, 2023</div>
-          <div>
-            <h3>Robotics and Automation in Construction</h3>
-            <p>Weren't robots supposed to build our buildings by now? A look at what actually happened to progress on the job site.</p>
             <span class="src">Read on Medium</span>
           </div>
         </a>
@@ -501,15 +525,6 @@
           </div>
         </a>
 
-        <a class="post" href="https://hanmhoang.medium.com/towards-a-new-building-process-17e2e79f4dac" target="_blank" rel="noopener">
-          <div class="date">Aug 27, 2018</div>
-          <div>
-            <h3>Towards a New Building Process</h3>
-            <p>Part 4 of The Freestanding Right To A Habitable Shelter.</p>
-            <span class="src">Read on Medium</span>
-          </div>
-        </a>
-
         <a class="post" href="https://hanmhoang.medium.com/the-future-of-the-building-industry-has-arrived-6e6209413f4" target="_blank" rel="noopener">
           <div class="date">Nov 17, 2016</div>
           <div>
@@ -524,15 +539,6 @@
           <div>
             <h3>When BIM Meets Design</h3>
             <p>Can ARCHICAD or Revit justify the effectiveness of designing directly in BIM?</p>
-            <span class="src">Read on Medium</span>
-          </div>
-        </a>
-
-        <a class="post" href="https://hanmhoang.medium.com/the-freestanding-right-to-a-habitable-shelter-b1e88b5a140d" target="_blank" rel="noopener">
-          <div class="date">Aug 26, 2016</div>
-          <div>
-            <h3>The Freestanding Right To A Habitable Shelter</h3>
-            <p>Part 3: The Perfect Storm.</p>
             <span class="src">Read on Medium</span>
           </div>
         </a>
