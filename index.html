@@ -4,6 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Han M. Hoang</title>
+<!-- Favicon (embedded, works with no extra upload) -->
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABJklEQVR4nO2UMU4DMRBFXwiQSAFFNECTU4AEV6HnAOkiCs5GS0ObC3CJkE12KTyWZkfr8ZoCpfCXRqPd729/j8eGioqKihNCJ9FI3sj/ueR3+b9X+U5ib7hXo92Yubu46Llj6Mx8X5rviQQqj50rT6gFYnTO2Jw2adAzcKBf1rbAgNUeUgO9I1gCt4Rz3AGLAgM3RrtMDdSlsSX+ITSNNjuXcRPCrlbCfQsfuR39XV8As6G1vQrM6DdertE0otGs1jNQuuiftEMGWkJzfgJfwBQ4Ak/Ao/DTxHyR+wC2SvsAPKu5B2EforXh3+h3dgPcSzSGezHaNYmHyLuGC0KFriSX3ILrsVrPQEvo5Bgl78BorWfgX5C7BRp2F/osS57pioqKitPCLyAYU2WOhcXBAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Social share preview. og-image.png must be hosted at the site root.
+     Update the absolute URLs if the domain ever changes. -->
+<meta name="description" content="Han M. Hoang. BIM and DfMA operator working the gap between the digital model and the physical build.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hanhoang.com/">
+<meta property="og:title" content="Han M. Hoang">
+<meta property="og:description" content="BIM and DfMA operator working the gap between the digital model and the physical build.">
+<meta property="og:image" content="https://www.hanhoang.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Han M. Hoang">
+<meta name="twitter:description" content="BIM and DfMA operator working the gap between the digital model and the physical build.">
+<meta name="twitter:image" content="https://www.hanhoang.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- FONTS: Archivo (bold display) + Inter (body). Swap here to match another family. -->
@@ -70,7 +87,8 @@
   }
   nav.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
   nav.bar, nav.bar *{color:var(--black)}
-  .brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.02em;text-decoration:none}
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand img{height:26px;width:auto;display:block}
   .navlinks{display:flex;gap:6px;flex-wrap:wrap}
   .navlinks button{
     font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;
@@ -231,7 +249,7 @@
 <!-- ============ NAV ============ -->
 <nav class="bar">
   <div class="wrap">
-    <a class="brand" href="#" data-go="home">HAN M. HOANG</a>
+    <a class="brand" href="#" data-go="home" aria-label="Han M. Hoang, home"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAABgCAYAAACntRj/AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAC8UlEQVR4nO3dP04bQRiG8XdtSIVA4gaRUqVNT58zIKVOQZ8r5FS5RpooUsQFiGiSgNkUMyMsRzYbi/m+Ne/zk1YGyfbsn8frpWBWksbA5a4+Xkk6krRQX+39X2+MH7Vc1PGHCevannMRvI5tn7zb2Ge9LFSO/dXG+FFL6GDry3ndAVNi2NcgaSnpcx1zFbRtbZzruh7LCevannMdvK6RwbdjfR60bf8svT/N29zXFehtVDmbfKq/R2/vz6DXHJpRpYFwWcFPOeM9l1HSTeB46/bZzsh9kyllO7OCj3acvQKYB5fgAUkEDzMEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysEDysuwadM3In5cQn+LHsFMA+ZwT/Ux97TZv+R9LH+vOo81iFrx+Fh57PmP8ZOR0njDpK+K26O+F/1Z5dvtP/RGviiuEu/QX1vhLFVVvDS4x1AIqXs5ANhcdmXGXzE2X0dse9mcTwygyfAebE4HlzTwgrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBwwrBw0rmv/hFTtXAB/tpo2L/rzXlmGQGT4TzkjZ1RqTM4L8pZmKkQdIb8QHbZlTZRz/0OH9Pb0uVYxIuK/hR0ltJd0Hj3Uo6CRrr0KxUOngv6WvQmMeSfivhGyXzDH8q6UZlo3teO76SwVf1MzhROfMu1O/vq3asTzu9/5Oy/2hdqX/wzCc5TTseo/oHnza3JNe1sELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsELwsOISfNYc8fuMy3z2HbkEn3XHibOg12Cilx78QuU+Uh/q71Fnz7ZfL+vjlDtetOe017z0Y5PiLycQLUEnc+2PAAAAAElFTkSuQmCC" alt="HH"></a>
     <div class="navlinks" id="nav">
       <button data-go="home" class="on">Home</button>
       <button data-go="mission">Mission</button>
@@ -336,8 +354,8 @@
           <div>
             <p>NUEN MOTO Company Ltd. is a new tech startup focused on designing and building sleek, innovative electric motorcycles for the Vietnamese market. We aim to create a new standard in electric motorcycle design and offer an alternative to traditional gas-powered, high-performance motorcycles.</p>
             <p>I co-founded this company with the belief that electric motorcycles can be powerful, elegant, and thrilling to ride. We have designed our motorcycles and all of our products to reflect this philosophy.</p>
-            <p>Vietnam is experiencing rapid urbanization and growth, driving demand for clean, efficient transportation. We are now developing the utility line for the delivery and ride-sharing market with Volty.</p>
-            <p>Learn more: <a href="https://www.nuenmoto.com/" target="_blank" rel="noopener">nuenmoto.com</a> and <a href="http://www.volty.info" target="_blank" rel="noopener">volty.info</a></p>
+            <p>Vietnam is experiencing rapid urbanization and growth, driving demand for clean, efficient transportation. We are now developing Volty, NUEN MOTO's utility line for the delivery and ride-sharing market.</p>
+            <p>Learn more: <a href="https://www.nuenmoto.com/" target="_blank" rel="noopener">nuenmoto.com</a> and the Volty line at <a href="http://www.volty.info" target="_blank" rel="noopener">volty.info</a></p>
           </div>
         </div>
 
