@@ -79,7 +79,7 @@
 
   /* ---------- NAV (translucent frosted bar) ---------- */
   nav.bar{
-    position:fixed;top:0;left:0;right:0;z-index:60;
+    position:sticky;top:0;left:0;right:0;z-index:60;
     background:rgba(255,255,255,.7);
     backdrop-filter:blur(12px) saturate(120%);
     -webkit-backdrop-filter:blur(12px) saturate(120%);
@@ -110,7 +110,7 @@
   .band{background:var(--white);color:var(--black);padding:64px 0;border-top:1px solid var(--line)}
   .band:first-child{border-top:none}
   .band.invert{background:var(--black);color:var(--white);border-top:none}
-  .band.hero{padding:150px 0 80px}
+  .band.hero{padding:56px 0 80px}
 
   /* ---------- HERO ---------- */
   .name{
@@ -238,10 +238,11 @@
   footer .mono{font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 
   @media(max-width:680px){
-    .band.hero{padding:120px 0 56px}
+    .wrap{padding:0 22px}
+    .band.hero{padding:40px 0 48px}
     .venture{grid-template-columns:1fr;gap:10px}
     .tl .row{grid-template-columns:74px 1fr;gap:16px}
-    .photo{float:none;display:block;margin:0 0 24px}
+    .photo{float:none;display:block;width:180px;height:180px;margin:0 0 24px}
     .loc div{border-right:none;margin-right:0;padding-right:0}
     .loc{gap:18px}
     nav.bar .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-direction:column;align-items:flex-start;gap:8px}
@@ -307,7 +308,7 @@
 <!-- ============ MISSION ============ -->
 <section class="page" id="mission">
 
-  <section class="band" style="padding-top:140px">
+  <section class="band">
     <div class="wrap">
       <span class="eyebrow">Mission</span>
       <h2>One question, asked from every angle.</h2>
@@ -375,7 +376,7 @@
 <!-- ============ BIOGRAPHY ============ -->
 <section class="page" id="biography">
 
-  <section class="band" style="padding-top:140px">
+  <section class="band">
     <div class="wrap">
       <span class="eyebrow">Biography</span>
       <h2>Han M. Hoang, born in 1975.</h2>
@@ -454,7 +455,7 @@
      Medium URL, and update the date, title, and one-line description. -->
 <section class="page" id="writing">
 
-  <section class="band" style="padding-top:140px">
+  <section class="band">
     <div class="wrap">
       <span class="eyebrow">Writing</span>
       <h2 style="max-width:22ch">Essays on building, automation, and the gap between them.</h2>
@@ -572,7 +573,7 @@
 <!-- ============ CONTACT ============ -->
 <section class="page" id="contact">
 
-  <section class="band invert" style="padding-top:150px">
+  <section class="band invert">
     <div class="wrap">
       <span class="eyebrow">Contact</span>
       <h2 style="max-width:none">Get in touch.</h2>
