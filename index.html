@@ -253,8 +253,17 @@
   .vlink:hover{opacity:.6}
   .footcred{color:inherit;text-decoration:none;cursor:default}
   .footcred:hover{opacity:1}
+  /* Personal page: credo list */
+  .credo{list-style:none;margin:20px 0 0;counter-reset:c;max-width:420px}
+  .credo li{counter-increment:c;display:flex;align-items:baseline;gap:18px;padding:14px 0;border-top:1px solid var(--line);
+    font-family:'Archivo',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+  .credo li:last-child{border-bottom:1px solid var(--line)}
+  .credo li::before{content:counter(c,decimal-leading-zero);font-family:'Archivo',sans-serif;font-weight:700;font-size:.78rem;opacity:.5;min-width:2.4ch}
   footer{background:var(--black);color:var(--white);padding:40px 0}
   footer .mono{font-family:'Archivo',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .footsocial{display:flex;gap:24px;margin-bottom:20px}
+  .footsocial a{font-family:'Archivo',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none}
+  .footsocial a:hover{color:#fff}
 
   @media(max-width:680px){
     .wrap{padding:0 22px}
@@ -281,7 +290,7 @@
       <button data-go="mission">Mission</button>
       <button data-go="biography">Biography</button>
       <button data-go="writing">Writing</button>
-      <button data-go="contact">Contact</button>
+      <button data-go="contact">Connect</button>
     </div>
   </div>
 </nav>
@@ -291,9 +300,9 @@
 
   <section class="band hero">
     <div class="wrap">
-      <span class="eyebrow">Designer, Engineer, Lifelong Student</span>
+      <span class="eyebrow">Designer, Aspiring Engineer, Lifelong Student</span>
       <h1 class="name">Han <span class="thin">M.</span><br>Hoang</h1>
-      <p class="lead-line">Twenty plus years on one problem: making the building you design and the building that actually gets built the same building.</p>
+      <p class="lead-line">More than twenty years closing one gap: between the building you design and the building you actually build.</p>
       <p class="subline">Architecture and Engineering by training, perpetual student by habit. I work across BIM, fabrication, construction automation, and electric mobility.</p>
 
       <!-- boxy MIT-style quote -->
@@ -303,10 +312,7 @@
       </div>
 
       <div class="home-links">
-        <a href="https://www.hanhoang.com/biography" data-go="biography">Biography</a>
         <a href="https://www.hanhoang.com/mission" data-go="mission">My Mission</a>
-        <a href="https://www.linkedin.com/in/hanmhoang/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@hanmhoang" target="_blank" rel="noopener">Medium</a>
       </div>
     </div>
   </section>
@@ -335,6 +341,7 @@
       <p style="margin-top:28px">When I finished grad school at MIT in 2005, my thesis advisor told me the technology to automate the design and construction process did not exist yet, and that it would take 25 to 30 years to arrive. I decided not to wait for it. For the past 20 years I have been chasing the same goal from different positions, each one a building block: a consultancy to master the digital model, a fabrication company to learn the factory, a robotics company to take it to the site, a vehicle company to understand how things actually move through a city.</p>
       <p>That is the purpose behind starting so many companies. It is not restlessness, it is a search. Each venture is a probe into a different part of the same problem, and the real work is connecting the dots between them: the design model, the factory floor, the job site, the finished building someone can afford to live in. The industry keeps these pieces separate. I keep trying to fuse them into one cohesive process.</p>
       <p>The technology my advisor predicted is finally arriving. My job now is to combine two decades of know-how, across BIM, fabrication, modular construction, automation, and the supply chain that carries all of it, into a building process that closes the gap between the digital plan and the physical home. That is the throughline. The companies below are where I am testing it.</p>
+      <p style="margin-top:10px"><a data-go="biography" href="#" class="vlink">Check out my biography</a></p>
     </div>
   </section>
 
@@ -404,12 +411,13 @@
       <img class="photo" src="https://static.wixstatic.com/media/91d4d0_b41c667ae95d427f8ede42ee5b72425a~mv2.jpg/v1/crop/x_0,y_20,w_1079,h_1082/fill/w_359,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/HanHoang_bw_2022.jpg" alt="Han M. Hoang">
 
       <p>Han M. Hoang has spent more than 20 years trying to make one thing true: that the building you design and the building that actually gets built can be the same building. He is the founder and CEO of The BIM Factory, an industry-leading BIM engineering consultancy in Ho Chi Minh City, and the throughline of his career is the gap between the digital model and the physical structure, and how to close it.</p>
-      <p>He started far from Vietnam. At age 9, Han left the country for Los Angeles with his sister, and grew up in the LA area. He studied architectural design at Woodbury University in Burbank starting in 1995 and earned a professional degree in architecture in 2000. But drawing buildings was never the point for him. How they got built was.</p>
-      <p>That question took him to MIT. He moved to Massachusetts in 2003 and graduated in 2005 with a Master's Degree in Architectural Studies, focused on advanced automated construction technology, work that earned him the Research Scholarship Award from the Design and Computation Group. His thesis advisor told him the technology to automate construction was still 25 to 30 years away. Han treated that as a roadmap, not a discouragement.</p>
+      <p>He started far from Vietnam. At age 9, Han left the country for Los Angeles and grew up in the LA area. He studied architectural design at Woodbury University in Burbank starting in 1995 and earned a professional degree in architecture in 2000. But drawing buildings was never the point for him. How they got built was.</p>
+      <p>That question took him to MIT. He moved to Massachusetts in 2003 and graduated in 2005 with a Master's Degree in Architectural Studies, focused on advanced automated construction technology, work that earned him the Research Scholarship Award from the Design and Computation Group.</p>
       <p>Before MIT, he had worked as a design associate at a Los Angeles architecture and urban planning firm, on large-scale commercial and entertainment projects across Los Angeles, Las Vegas, and Arizona. After MIT, in 2005, he joined Bovis Lend Lease as an assistant project manager on major hospitality and residential projects in New York, and taught as a part-time adjunct professor at the New York Institute of Technology from 2005 to 2006. Design, then construction, then management: he was deliberately collecting the pieces of a process that the industry keeps apart.</p>
       <p>In late 2008 he relocated to Vietnam and worked as a private project developer. What he saw there, a real need for better design and construction quality, became the reason to stop consulting on the problem and start building the answer. In 2014 he founded The BIM Factory, which had been operating since late 2013 and was officially registered that January, to create the region's most forward-thinking, highly skilled BIM engineering consultancy and master the digital model end of the problem.</p>
       <p>From there the work moved closer to the physical build. In 2017 he founded The Fab Factory to attack fabrication and modular construction, which he rebranded and relaunched as The Fab Collective in 2025. In 2022 he began R&amp;D on AROBOTIX, which he officially registered and launched in 2025, taking the digital plan all the way onto the job site through automation and robotics. Since 2017 he has served on the Ministry of Construction's BIM Steering Committee for Vietnam's BIM Roadmap, and he contributes to the DfMA Working Group at the BIMForum, helping define the next process for design and manufacturing in the building industry.</p>
-      <p>The mission underneath all of it has not changed since MIT: develop the technological processes for design, engineering, manufacturing, and construction that make decent housing efficient, affordable, and available to far more people than it reaches today. The companies are not a collection. They are the experiment.</p>
+      <p>The mission has not changed since MIT, and the work is far from finished. Why it has taken so many companies to chase a single problem is the argument of the Mission page.</p>
+      <p style="margin-top:10px"><a data-go="personal" href="#" class="vlink">Read the longer version of my story</a></p>
     </div>
   </section>
 
@@ -419,51 +427,105 @@
       <h4>Past Experiences</h4>
       <div class="tl">
         <div class="row"><div class="yr">1995</div><div class="ev"><b>Woodbury University</b><span>Bachelor of Architecture. Digital and computational architecture.</span></div></div>
+        <div class="row"><div class="yr">1998</div><div class="ev"><b>Bonura Building</b><span>Project Manager. Residential contractor.</span></div></div>
         <div class="row"><div class="yr">2000</div><div class="ev"><b>Orne + Associates Inc., Los Angeles</b><span>Design Associate.</span></div></div>
         <div class="row"><div class="yr">2003</div><div class="ev"><b>MIT, Master's in Architectural Studies</b><span>Automated construction technology.</span></div></div>
         <div class="row"><div class="yr">2005</div><div class="ev"><b>Bovis Lend Lease, New York</b><span>Estimator and QC Manager.</span></div></div>
         <div class="row"><div class="yr">2008</div><div class="ev"><b>RAAS Corporation, Vietnam</b><span>Development Director.</span></div></div>
         <div class="row"><div class="yr">2009</div><div class="ev"><b>Founded DH Studio, San Francisco</b><span>Design consulting.</span></div></div>
         <div class="row"><div class="yr">2010</div><div class="ev"><b>Founded DHC, Ho Chi Minh City</b><span>Architecture design.</span></div></div>
-        <div class="row"><div class="yr">2013</div><div class="ev"><b>Co-founded Synectics</b><span>The first BIM consultancy company in Vietnam.</span></div></div>
+        <div class="row"><div class="yr">2011</div><div class="ev"><b>Co-founded Synectics</b><span>CTO. The first BIM consultancy company in Vietnam.</span></div></div>
         <div class="row"><div class="yr">2014</div><div class="ev"><b>Founded The BIM Factory, Ho Chi Minh City</b><span>BIM consultancy company. Operating since late 2013, officially registered January 11, 2014.</span></div></div>
         <div class="row"><div class="yr">2016</div><div class="ev"><b>Co-founded the Institute of Virtual Design and Construction</b><span>BIM education and content.</span></div></div>
         <div class="row"><div class="yr">2017</div><div class="ev"><b>Founded TBF Academy, Vietnam</b><span>Training for BIM modelers and coordinators.</span></div></div>
         <div class="row"><div class="yr">2017</div><div class="ev"><b>Founded The Fab Factory</b><span>Prefab and modular construction. Rebranded and relaunched as The Fab Collective in 2025.</span></div></div>
         <div class="row"><div class="yr">2017</div><div class="ev"><b>Member, BIM Steering Committee, Vietnam</b><span>Ministry of Construction's BIM Roadmap.</span></div></div>
+        <div class="row"><div class="yr">2017</div><div class="ev"><b>Co-founded Fablab Thao Dien</b><span>Makerspace and workshop facility.</span></div></div>
         <div class="row"><div class="yr">2018</div><div class="ev"><b>Co-founded MITFive, Vietnam</b><span>Startups and entrepreneurship training.</span></div></div>
-        <div class="row"><div class="yr">2022</div><div class="ev"><b>Co-founded Fablab Thao Dien</b><span>Makerspace and workshop facility.</span></div></div>
+        <div class="row"><div class="yr">2019</div><div class="ev"><b>Founded The Dream Factory, Vietnam</b><span>Hardware accelerator and innovation lab.</span></div></div>
         <div class="row"><div class="yr">2022</div><div class="ev"><b>AROBOTIX R&amp;D begins</b><span>Construction automation and robotics. Officially registered and launched in 2025.</span></div></div>
-        <div class="row"><div class="yr">2023</div><div class="ev"><b>Founded The Dream Factory, Vietnam</b><span>Hardware accelerator and innovation lab.</span></div></div>
+        <div class="row"><div class="yr">2023</div><div class="ev"><b>Co-founded NUEN MOTO</b><span>Electric motorcycle company.</span></div></div>
         <div class="row"><div class="yr">2025</div><div class="ev"><b>Launched AROBOTIX</b><span>Officially registered and launched after R&amp;D begun in 2022.</span></div></div>
-        <div class="row"><div class="yr">2025</div><div class="ev"><b>Co-founded NUEN MOTO</b><span>Electric motorcycle company.</span></div></div>
         <div class="row"><div class="yr">2025</div><div class="ev"><b>Relaunched The Fab Collective</b><span>Prefab and modular construction, rebranded from The Fab Factory.</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CURRENT WORK (white band) ===== -->
+
+</section>
+
+<!-- ============ PERSONAL ============ -->
+<section class="page" id="personal">
+
   <section class="band">
     <div class="wrap">
-      <h4>Current Focus</h4>
-      <div class="ventures">
-        <div class="venture v-tbf">
-          <div class="key"><a class="vlogo vlogo--tbf" href="https://www.the-bim-factory.com" target="_blank" rel="noopener" aria-label="The BIM Factory website"></a>TBF<a class="vname" href="https://www.the-bim-factory.com" target="_blank" rel="noopener"><b>The BIM Factory</b></a>Founder, CEO</div>
-          <div><p>BIM consultancy and engineering. Oversee a team of 80 professionals providing consultancy in design, engineering, construction, Building Information Modeling, and Virtual Design and Construction.</p></div>
-        </div>
-        <div class="venture v-tfc">
-          <div class="key"><a class="vlogo vlogo--tff" href="https://www.the-fab-collective.com" target="_blank" rel="noopener" aria-label="The Fab Collective website"></a>TFC<a class="vname" href="https://www.the-fab-collective.com" target="_blank" rel="noopener"><b>The Fab Collective</b></a>Co-founder, CEO</div>
-          <div><p>Construction technology, production, manufacturing, and assembly. Oversee a team of 10 providing manufacturing and assembly of modular and prefab components for the building industry in Canada, the United States, and Vietnam.</p></div>
-        </div>
-        <div class="venture v-nuen">
-          <div class="key"><a class="vlogo vlogo--nuen" href="https://www.nuenmoto.com" target="_blank" rel="noopener" aria-label="NUEN MOTO website"></a>NUEN MOTO<a class="vname" href="https://www.nuenmoto.com" target="_blank" rel="noopener"><b>NUEN MOTO</b></a>Co-founder, Head of Investment and Strategy</div>
-          <div><p>Electric motorcycle company. A startup of 15 professionals designing and manufacturing high-performance electric motorcycles for Vietnam and, eventually, the global market.</p></div>
-        </div>
-        <div class="venture">
-          <div class="key"><a class="vlogo vlogo--ax" href="https://www.arobotix.com" target="_blank" rel="noopener" aria-label="AROBOTIX website"></a>AROBOTIX<a class="vname" href="https://www.arobotix.com" target="_blank" rel="noopener"><b>AROBOTIX Corp.</b></a>Founder, CEO</div>
-          <div><p>Construction automation and robotics. A startup developing novel technologies that advance construction work through robotics and automated systems for the global construction industry.</p></div>
-        </div>
-      </div>
+      <span class="eyebrow">Personal</span>
+      <h2>The long version.</h2>
+      <p class="lead">I arrived in America at nine years old knowing two words of English: hello and bye. I did not know what hi meant.</p>
+      <p style="margin-top:28px">My father had fled Vietnam as a refugee in 1977. It took seven years of paperwork to bring my sister and me to the United States, and when I landed I was meeting him for the first time. I lived with him until I was fifteen. Then Vietnam began opening to the world and he decided to go back. My sister was sixteen, I was fifteen, and from that point we raised ourselves.</p>
+      <p>I started my first job on my sixteenth birthday, cleaning the seating area at a McDonald's. I worked from then on because we had to survive. There was rarely money for rent, so we lived out of boxes and moved from place to place until we finished high school. No one guided me through any of it. Everything was a lesson I had to learn on my own, and I have treated life that way ever since.</p>
+    </div>
+  </section>
+
+  <section class="band invert">
+    <div class="wrap">
+      <span class="eyebrow">The dream</span>
+      <h2>How architecture found me.</h2>
+      <p>In 1994 the Northridge earthquake tore through Los Angeles. I watched the destruction on television, families who had lost everything, and I could not imagine how long it would take to rebuild it all. That night I dreamed of helicopters flying over the wreckage and dropping containers into the debris. Robots climbed out, sorted the rubble, and rebuilt the houses on the spot, instantly.</p>
+      <p>I told a college friend about the dream over coffee and asked her how a person could actually do that. She said, I think that is architecture. My honest first reaction was, what the hell is architecture? Her school had a program, so I applied with no real idea what I was walking into. More than thirty years later I am still chasing that same dream: the machines, the rebuilding, the distance between a plan and a finished home closed in an instant. Everything I have built since traces back to it.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">The education</span>
+      <h2>Four schools, not two.</h2>
+      <p>My first year nearly ended it. I was working as a file clerk at a medical office to support myself, and I did badly on the final. My professor told me I was not cut out for architecture and should find something else to do. So I quit the job, more or less lived at the school, borrowed a friend's father's truck, and gave it everything. Five years later I graduated from Woodbury University with its highest honors.</p>
+      <p>I worked for two years to learn how the real world builds, then applied to MIT. They accepted me because of my story. Once there I won a full scholarship that covered my study and my living, and I never earned anything below an A. I finished the degree in a single year, overlapping eight and nine classes a semester when one or two was the norm, which is how I became known on campus as the guy who finished in a year. I knew I was somewhere special, and I wanted to prove I belonged.</p>
+      <p>The year after, I joined the Media Lab and took whatever I wanted: electrical engineering, coding, mechanical work. I spent my time building robots and anything else I could imagine. I was in love with machines and how they worked, so I volunteered to assist on every advanced machine and piece of equipment I could find, learned them inside out, and ended up teaching other students how to run them.</p>
+    </div>
+  </section>
+
+  <section class="band invert">
+    <div class="wrap">
+      <span class="eyebrow">Off the clock</span>
+      <h2>Where the rest of me comes from.</h2>
+      <p>I found the things I love by myself, usually on a bike. One bad afternoon I rode until I came across a Pop Warner football practice, and I stood watching until a coach named Coach Brown walked over and asked if I wanted to play. I told him I did not know what it was. He said, get over here and learn. That was the moment football became mine. Another ride in the off-season led me to a court where two friends were shooting hoops, and basketball became mine the same way. I have followed the Lakers and the Raiders ever since.</p>
+      <p>At MIT it was school, then ball with my friends, then two or three hours of sleep, on repeat. I still need that balance, and I still need time alone. I do my best thinking when I can step back to reflect and understand, which is exactly what I am doing as I write this.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">What the work taught me</span>
+      <h2>Every job was there to teach me something.</h2>
+      <p>I took most of my jobs to learn how things are actually built. At Orne and Associates I learned urban planning, but the bigger lesson was Richard Orne himself, the best boss I have ever had. The way he treated his people and ran his business became the model for every company I have started since. At Lend Lease, which I chose because it was the largest builder I could think of, I learned how enormous projects come together, including one major New York development I saw through from beginning to end. In Vietnam I learned how differently the world works depending on where you stand, and how to adapt to a culture instead of fighting it.</p>
+    </div>
+  </section>
+
+  <section class="band invert">
+    <div class="wrap">
+      <span class="eyebrow">What I live by</span>
+      <h2>The five things that matter, and none of them is work.</h2>
+      <p>I tell everyone who works for me the same thing. The five most important things in life have nothing to do with the job.</p>
+      <ol class="credo">
+        <li>Health</li>
+        <li>Family</li>
+        <li>Friends</li>
+        <li>Beliefs</li>
+        <li>Community and neighbors</li>
+      </ol>
+      <p style="margin-top:26px">Health sits first because without it you cannot take care of the people who depend on you. Family is always first in my heart. Work is not on the list.</p>
+      <p>I live by a simple line: everything happens for a reason, and every blessing ignored becomes a curse. I believe every failure is a lesson, and the more expensive the failure, the more valuable the lesson, which is why I have never seen a reason to yell at the people who work for me. The one thing I cannot compromise on is how a person treats another person.</p>
+      <p>I look for calm, and for solutions that work for everyone at the table. To me the glass is half full. I used to have a real temper. At fifty-one I think I see things more clearly and from more sides, and I believe in balance above almost everything: whatever you pour into one part of your life has to be matched, or beaten, by what you pour into the better parts.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">Family</span>
+      <h2>Family first, always.</h2>
+      <p>My wife is the most important person in my life and the smartest person I know. I ask her advice on everything, because she is almost always right. Our four children come next, and they are the reason for all of it.</p>
     </div>
   </section>
 
@@ -482,6 +544,14 @@
 
       <div class="posts" style="margin-top:36px">
         <!-- POSTS:START (auto-generated by build-blog.js, manual edits between the markers are overwritten on sync) -->
+        <a class="post" href="https://www.linkedin.com/pulse/model-got-green-light-part-still-showed-up-inches-off-han-hoang-qlolc" target="_blank" rel="noopener">
+          <div class="date">Jun 19, 2026</div>
+          <div>
+            <h3>The Model Got the Green Light. But the Part Still Showed Up Inches Off.</h3>
+            <p>A model can clear every review and still yield a part that arrives off by inches. On the gap between an approved model and one a factory can actually build.</p>
+            <span class="src">Read on LinkedIn</span>
+          </div>
+        </a>
         <a class="post" href="https://hanmhoang.medium.com/robotics-and-automation-in-construction-8b010e344f1b" target="_blank" rel="noopener">
           <div class="date">Feb 9, 2023</div>
           <div>
@@ -594,29 +664,27 @@
 
   <section class="band invert">
     <div class="wrap">
-      <span class="eyebrow">Contact</span>
-      <h2 style="max-width:none">Get in touch.</h2>
-      <p class="addr" style="margin-top:24px">20-B Doan Huu Trung, An Khanh Ward, Thu Duc City, Ho Chi Minh City, Vietnam</p>
-      <div class="home-links" style="margin-top:40px">
+      <span class="eyebrow">Connect</span>
+      <h2 style="max-width:none">Connect with me on:</h2>
+      <div class="home-links" style="margin-top:32px">
         <a href="https://www.linkedin.com/in/hanmhoang/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://medium.com/@hanmhoang" target="_blank" rel="noopener">Medium</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener">@hanmhoang</a>
+        <a href="https://www.instagram.com/han.hoang/" target="_blank" rel="noopener">@han.hoang</a>
       </div>
     </div>
   </section>
 
-  <!-- This form is a visual placeholder. Wire it to your own backend or form service before publishing. -->
   <section class="band">
     <div class="wrap">
       <h4>Send Me a Message</h4>
-      <div class="form">
-        <label>First Name</label><input type="text">
-        <label>Last Name</label><input type="text">
-        <label>Email</label><input type="email">
-        <label>Message</label><textarea></textarea>
-        <button type="button">Submit</button>
-        <p class="note">Placeholder form. Connect it to a form service or email handler before going live.</p>
-      </div>
+      <form class="form" id="contact-form" novalidate>
+        <label>First Name</label><input type="text" name="first_name" required>
+        <label>Last Name</label><input type="text" name="last_name">
+        <label>Email</label><input type="email" name="email" required>
+        <label>Message</label><textarea name="message" required></textarea>
+        <button type="submit">Submit</button>
+        <p class="note" id="contact-status" role="status" style="display:none"></p>
+      </form>
     </div>
   </section>
 
@@ -645,7 +713,13 @@
 </section>
 
 <footer>
-  <div class="wrap"><a data-go="vault" href="#" class="mono footcred">&copy; 2026 Han M. Hoang</a></div>
+  <div class="wrap">
+    <div class="footsocial">
+      <a href="https://www.linkedin.com/in/hanmhoang/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://medium.com/@hanmhoang" target="_blank" rel="noopener">Medium</a>
+    </div>
+    <a data-go="vault" href="#" class="mono footcred">&copy; 2026 Han M. Hoang</a>
+  </div>
 </footer>
 
 <script>
@@ -689,6 +763,40 @@
     }catch(e){ err.textContent="Wrong password."; }
   }
   if(btn){ btn.addEventListener("click",go); pw.addEventListener("keydown",function(e){if(e.key==="Enter")go();}); }
+})();
+</script>
+<script>
+(function(){
+  // Free, unlimited form delivery via Web3Forms. Get a free access key at
+  // https://web3forms.com (enter your email, they email you a key), then paste it below.
+  // Your email address is never written into this page; the key maps to it on their server.
+  var WEB3FORMS_KEY = "4294662e-cd2b-4fd4-aaf5-1f8f8ae60cbc";
+  var form = document.getElementById("contact-form");
+  var status = document.getElementById("contact-status");
+  if (!form) return;
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    if (!form.first_name.value.trim() || !form.email.value.trim() || !form.message.value.trim()){
+      status.style.display="block"; status.textContent="Please add your name, email, and a message."; return;
+    }
+    status.style.display="block"; status.textContent="Sending...";
+    try{
+      var res = await fetch("https://api.web3forms.com/submit", {
+        method:"POST",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: "New message from hanhoang.com",
+          from_name: (form.first_name.value + " " + form.last_name.value).trim(),
+          email: form.email.value,
+          message: form.message.value
+        })
+      });
+      var out = await res.json();
+      if (out.success){ form.reset(); status.textContent="Thanks. Your message has been sent."; }
+      else { status.textContent="Sorry, something went wrong. Please try again later."; }
+    } catch(err){ status.textContent="Sorry, something went wrong. Please try again later."; }
+  });
 })();
 </script>
 </body>
