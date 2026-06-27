@@ -230,12 +230,17 @@
   .addr{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.3rem,3vw,2rem);line-height:1.2;letter-spacing:-.01em;color:inherit;max-width:20ch}
   .form{max-width:520px}
   .form label{display:block;font-family:'Archivo',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:18px 0 6px}
-  .form input,.form textarea{
+  .form input,.form textarea,.form select{
     width:100%;background:transparent;border:none;border-bottom:1.5px solid var(--line);
     padding:10px 0;font-family:inherit;font-size:1rem;color:inherit;transition:border-color .2s ease;
   }
-  .form input:focus,.form textarea:focus{outline:none;border-bottom-color:currentColor}
+  .form input:focus,.form textarea:focus,.form select:focus{outline:none;border-bottom-color:currentColor}
   .form textarea{min-height:100px;resize:vertical}
+  .form select{appearance:none;-webkit-appearance:none;-moz-appearance:none;cursor:pointer;border-radius:0;padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='1.5'/></svg>");
+    background-repeat:no-repeat;background-position:right 2px center}
+  .form select option{color:#0A0A0A}
+  .form .opt{font-weight:400;text-transform:none;letter-spacing:0;opacity:.55}
   .form button{
     margin-top:26px;font-family:'Archivo',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;
     background:var(--black);color:var(--white);border:1.5px solid var(--black);padding:14px 30px;cursor:pointer;
@@ -516,7 +521,7 @@
         <li>Community and neighbors</li>
       </ol>
       <p style="margin-top:26px">Health sits first because without it you cannot take care of the people who depend on you. Family is always first in my heart. Work is not on the list.</p>
-      <p>I live by a simple line: everything happens for a reason, and every blessing ignored becomes a curse. I believe every failure is a lesson, and the more expensive the failure, the more valuable the lesson, which is why I have never seen a reason to yell at the people who work for me. The one thing I cannot compromise on is how a person treats another person.</p>
+      <p>I live by a simple line: everything happens for a reason, and every blessing ignored becomes a curse. I believe every failure is a lesson, and the more expensive the failure, the more valuable the lesson, which is why I try to meet mistakes with patience rather than blame. The one thing I cannot compromise on is how a person treats another person.</p>
       <p>I look for calm, and for solutions that work for everyone at the table. To me the glass is half full. I used to have a real temper. At fifty-one I think I see things more clearly and from more sides, and I believe in balance above almost everything: whatever you pour into one part of your life has to be matched, or beaten, by what you pour into the better parts.</p>
     </div>
   </section>
@@ -525,7 +530,7 @@
     <div class="wrap">
       <span class="eyebrow">Family</span>
       <h2>Family first, always.</h2>
-      <p>My wife is the most important person in my life and the smartest person I know. I ask her advice on everything, because she is almost always right. Our four children come next, and they are the reason for all of it.</p>
+      <p>My wife is the most important person in my life, and the smartest, most beautiful, and most talented person I know. She is the solid rock the rest of us stand on, the one who keeps us balanced and takes care of all of us, especially me. She makes the best food, tells the lamest jokes, and can always center me with a single joyful "Hiiiii" on the phone, no matter how I am feeling. It never fails to make me smile. She is the person I laugh with most and the one I can be completely myself around: patient, thoughtful, and endlessly supportive. I ask her advice on everything, because she is almost always right, and my favorite thing she says is, "Don't worry, I have a system for that..." Our four children come next, and they are the reason for all of it.</p>
     </div>
   </section>
 
@@ -681,10 +686,44 @@
         <label>First Name</label><input type="text" name="first_name" required>
         <label>Last Name</label><input type="text" name="last_name">
         <label>Email</label><input type="email" name="email" required>
+        <label>Your Role <span class="opt">optional</span></label>
+        <select name="role">
+          <option value="">Select one...</option>
+          <option>Founder or Owner</option>
+          <option>Executive or Director</option>
+          <option>Manager or Team Lead</option>
+          <option>Designer, Engineer, or Specialist</option>
+          <option>Investor</option>
+          <option>Other</option>
+        </select>
+        <label>Your Business <span class="opt">optional</span></label>
+        <select name="business">
+          <option value="">Select one...</option>
+          <option>Architecture</option>
+          <option>Engineering</option>
+          <option>Construction</option>
+          <option>Manufacturing</option>
+          <option>Real Estate or Development</option>
+          <option>Investment (VC or PE)</option>
+          <option>Other</option>
+        </select>
+        <label>Inquiring About <span class="opt">optional</span></label>
+        <select name="inquiring_about">
+          <option value="">Select one...</option>
+          <option>The BIM Factory</option>
+          <option>The Fab Collective</option>
+          <option>AROBOTIX Corp.</option>
+          <option>NUEN MOTO</option>
+          <option>General or Other</option>
+        </select>
         <label>Message</label><textarea name="message" required></textarea>
         <button type="submit">Submit</button>
         <p class="note" id="contact-status" role="status" style="display:none"></p>
       </form>
+      <div id="contact-confirm" style="display:none">
+        <h4 style="margin-top:0">Message sent.</h4>
+        <p style="max-width:48ch">Thank you for connecting. I read every message myself and will get back to you as soon as I can.</p>
+      </div>
     </div>
   </section>
 
@@ -773,6 +812,7 @@
   var WEB3FORMS_KEY = "4294662e-cd2b-4fd4-aaf5-1f8f8ae60cbc";
   var form = document.getElementById("contact-form");
   var status = document.getElementById("contact-status");
+  var confirmEl = document.getElementById("contact-confirm");
   if (!form) return;
   form.addEventListener("submit", async function(e){
     e.preventDefault();
@@ -780,21 +820,30 @@
       status.style.display="block"; status.textContent="Please add your name, email, and a message."; return;
     }
     status.style.display="block"; status.textContent="Sending...";
+    var payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: "New message from hanhoang.com",
+      from_name: (form.first_name.value + " " + form.last_name.value).trim(),
+      email: form.email.value,
+      message: form.message.value
+    };
+    if (form.role.value) payload.role = form.role.value;
+    if (form.business.value) payload.business = form.business.value;
+    if (form.inquiring_about.value) payload.inquiring_about = form.inquiring_about.value;
     try{
       var res = await fetch("https://api.web3forms.com/submit", {
         method:"POST",
         headers:{"Content-Type":"application/json","Accept":"application/json"},
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: "New message from hanhoang.com",
-          from_name: (form.first_name.value + " " + form.last_name.value).trim(),
-          email: form.email.value,
-          message: form.message.value
-        })
+        body: JSON.stringify(payload)
       });
       var out = await res.json();
-      if (out.success){ form.reset(); status.textContent="Thanks. Your message has been sent."; }
-      else { status.textContent="Sorry, something went wrong. Please try again later."; }
+      if (out.success){
+        form.style.display="none";
+        status.style.display="none";
+        if (confirmEl) confirmEl.style.display="block";
+      } else {
+        status.textContent="Sorry, something went wrong. Please try again later.";
+      }
     } catch(err){ status.textContent="Sorry, something went wrong. Please try again later."; }
   });
 })();
