@@ -35,8 +35,48 @@ const FEEDS = [
 // Leaving this empty gives pure reverse-chronological order.
 //
 // Suggested on-thesis picks (uncomment to use):
-// const PINNED = ["8b010e344f1b", "17e2e79f4dac", "b1e88b5a140d"];
-const PINNED = ["8b010e344f1b", "17e2e79f4dac", "b1e88b5a140d"];
+// const PINNED = ["li-model-green-light", "8b010e344f1b", "17e2e79f4dac", "b1e88b5a140d"];
+
+// Manual posts (articles not on Medium, e.g. LinkedIn). These persist across
+// syncs and merge with the Medium feed by date. Update the date if needed.
+const MANUAL_POSTS = [
+  {
+    id: "li-bim-mandate-jul2026",
+    link: "https://www.linkedin.com/posts/hanmhoang_thebimfactory-bim-vietnam-ugcPost-7478117141154701312-99Gk/",
+    title: "The Day Vietnam's BIM Mandate Took Effect",
+    dek: "On July 1, 2026, Vietnam's first enforceable BIM requirement went live. What it changes for the industry, from someone who bet on this transition back in 2014.",
+    date: "2026-07-01T12:00:00",  // PLACEHOLDER copy: confirm the real hook/dek
+  },
+  {
+    id: "li-model-green-light",
+    link: "https://www.linkedin.com/pulse/model-got-green-light-part-still-showed-up-inches-off-han-hoang-qlolc",
+    title: "The Model Got the Green Light. But the Part Still Showed Up Inches Off.",
+    dek: "A model can clear every review and still yield a part that arrives off by inches. On the gap between an approved model and one a factory can actually build.",
+    date: "2026-06-19T12:00:00",
+  },
+  {
+    id: "li-nuen-building-apr2026",
+    link: "https://www.linkedin.com/posts/hanmhoang_building-an-electric-motorcycle-company-in-activity-7439968907270139905-hGUJ/",
+    title: "Building an Electric Motorcycle Company",
+    dek: "On building NUEN MOTO, my electric motorcycle venture, and what starting a hardware company from Vietnam actually demands.",
+    date: "2026-04-11T12:00:00",
+  },
+  {
+    id: "li-bim-future-p2-mar2026",
+    link: "https://www.linkedin.com/posts/hanmhoang_ive-just-written-part-2-of-my-assessment-activity-7437034427677028353-V7Xm/",
+    title: "The Future of BIM, Part 2",
+    dek: "Part 2 of my assessment of where BIM is heading, and what has to change for the model to carry real weight once construction starts.",
+    date: "2026-03-10T12:00:00",
+  },
+  {
+    id: "li-tbf-ten-years-feb2026",
+    link: "https://www.linkedin.com/posts/hanmhoang_for-the-past-10-years-at-the-bim-factory-activity-7431580065555021824-VuSE/",
+    title: "Ten Years at The BIM Factory",
+    dek: "A decade delivering BIM out of Ho Chi Minh City, and what running The BIM Factory taught me about the gap between the model and the build.",
+    date: "2026-02-23T12:00:00",
+  },
+];
+const PINNED = ["li-bim-mandate-jul2026", "li-model-green-light", "8b010e344f1b", "17e2e79f4dac", "b1e88b5a140d"];
 
 const MAX_POSTS = 20;          // hard cap on cards rendered
 const DEK_MAX = 160;           // max characters in the one-line summary
@@ -141,12 +181,13 @@ function renderCard(p) {
   const date = escapeHtml(fmtDate(p.pubDate));
   const title = escapeHtml(p.title);
   const dek = escapeHtml(p.dek);
+  const src = /linkedin\.com/.test(p.link) ? "Read on LinkedIn" : "Read on Medium";
   return `        <a class="post" href="${p.link}" target="_blank" rel="noopener">
           <div class="date">${date}</div>
           <div>
             <h3>${title}</h3>
             <p>${dek}</p>
-            <span class="src">Read on Medium</span>
+            <span class="src">${src}</span>
           </div>
         </a>`;
 }
@@ -162,13 +203,23 @@ function inject(html, cardsHtml) {
 (async () => {
   try {
     let all = [];
+    let feedOk = false;
     for (const f of FEEDS) {
       try {
         const xml = await fetchFeed(f.url);
         all = all.concat(parseItems(xml, f.authorFilter));
+        feedOk = true;
       } catch (e) {
         console.warn(`Skipping feed ${f.url}: ${e.message}`);
       }
+    }
+    if (!feedOk) {
+      console.error("No Medium feeds reachable. Leaving index.html unchanged to avoid wiping posts.");
+      process.exit(1);
+    }
+    for (const mp of MANUAL_POSTS) {
+      all.push({ id: mp.id, link: mp.link, title: killDashes(mp.title, "-"), dek: mp.dek,
+                 pubDate: mp.date, ts: Date.parse(mp.date) || 0 });
     }
     if (!all.length) {
       console.error("No posts fetched. Leaving index.html unchanged.");
